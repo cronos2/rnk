@@ -21,8 +21,8 @@ jobs:
 
       - name: Run update script
         run: |
-          chmod +x update-domains.sh
-          ./update-domains.sh
+          chmod +x update_domains.sh
+          ./update_domains.sh
 
       - name: Commit changes if needed
         run: |
