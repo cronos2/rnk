@@ -1,0 +1,25 @@
+name: Update
+
+on:
+  schedule:
+   - cron: '0 0 10 * * *'
+  workflow_dispatch:
+    inputs:
+      name:
+        description: "Who to greet"
+        default: "World"
+
+jobs:
+  fetch_csv:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Run fetch script
+        run: |
+          chmod +x update.sh
+          ./update.sh
+        env:
+          API_URL: ${{ secrets.API_URL }}
+          API_KEY: ${{ secrets.API_KEY }}
