@@ -5,7 +5,7 @@ URL="https://antifilter.download/list/ip.lst"
 OUTFILE="ip.lst"
 TMPFILE="ip.lst.tmp"
 
-echo "Downloading domains list…"
+echo "Downloading ip list…"
 
 curl -fsSL "$URL" -o "$TMPFILE"
 
